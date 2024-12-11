@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ReqResController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Test;
 
@@ -12,3 +13,5 @@ Route::get('/info/{msg?}', function ($msg = 'test') {
 });
 
 Route::get('/test/{number}', [Test::class, 'test']);
+
+Route::get('/reqres', [ReqResController::class, 'reqres']);
