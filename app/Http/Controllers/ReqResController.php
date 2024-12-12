@@ -7,7 +7,7 @@ use Illuminate\Http\Response;
 
 class ReqResController extends Controller
 {
-    public function ReqRes(Request $request, Response $response) {
-        return view('reqres', ['request'=>$request->all()]);
-    }
+  public function ReqRes(Request $request, Response $response) {
+    return view('reqres', ['request'=>$request, 'response'=>$response]);
+  }
 }
