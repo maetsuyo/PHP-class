@@ -7,11 +7,13 @@ use Illuminate\Http\Request;
 class AbeHiroController extends Controller
 {
   public function abehiro(Request $request) {
-    $name = $request->input('name');
-    if ($name) {
-      return view('abehiroshi', ['name'=>$name]);
+    $path = $request->input('path');
+    if ($path == 'welcome') {
+      return view('welcome');
+    } elseif ($path == 'directive') {
+      return view('directive');
     } else {
-      return view('abehiroshi');
+      return view('abehiroshi', ['path'=>$path]);
     }
   }
 }

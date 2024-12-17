@@ -16,7 +16,7 @@
       request
     </p>
     <pre>
-      {{$request}}
+      {{ $request }}
     </pre>
   </div>
   <div>
@@ -24,7 +24,7 @@
       response
     </p>
     <pre>
-      {{$response}}
+      {{ $response }}
     </pre>
   </div>
 </body>

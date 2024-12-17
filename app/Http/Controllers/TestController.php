@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Test extends Controller
+class TestController extends Controller
 {
   public function test($number) {
     return view('test', ['number'=>$number]);

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Test;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\ReqResController;
 use App\Http\Controllers\AbeHiroController;
 
@@ -13,7 +13,7 @@ Route::get('/info/{msg?}', function ($msg = 'test') {
     return view('info', ['msg'=>$msg]);
 });
 
-Route::get('/test/{number}', [Test::class, 'test']);
+Route::get('/test/{number}', [TestController::class, 'test']);
 
 Route::get('/reqres', [ReqResController::class, 'reqres']);
 

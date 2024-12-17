@@ -12,8 +12,11 @@
 @endsection
 
 @section('form')
-<form action="/abehiroshi" method="post">
+<form action="/abehiroshi" method="POST">
   @csrf
-  <p>名前:<input type="text" name="name"></p>
+  <p>path:<input type="text" name="path"></p>
 </form>
+@isset($path)
+<p>入力されたpathは{{ $path }}です。</p>
+@endisset
 @endsection

@@ -7,7 +7,7 @@
 </head>
 <body>
   <p>
-    {{$number}}
+    {{ $number }}
   </p>
 </body>
 </html>
