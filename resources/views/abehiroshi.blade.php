@@ -11,12 +11,28 @@
   <p><a href="kanri/kanri.htm" target="right">管理者</a></p>
 @endsection
 
+@section('ProfileCard')
+  <x-ProfileCard name="阿部寛">
+@endsection
+
 @section('form')
 <form action="/abehiroshi" method="POST">
   @csrf
   <p>path:<input type="text" name="path"></p>
 </form>
-@isset($path)
-<p>入力されたpathは{{ $path }}です。</p>
-@endisset
+  @isset($path)
+    @for ($i=1; $i<=5; $i++)
+      @if ($i == 1)
+        <p>入力されたpathは{{ $path }}です。{{ $i }}回目</p>
+      @elseif ($i == 2)
+        @continue
+      @elseif ($i == 3)
+        <p>入力されたpathは{{ $path }}です。{{ $i }}回目</p>
+      @elseif ($i == 4)
+        @break
+      @else
+        <p>入力されたpathは{{ $path }}です。{{ $i }}回目</p>
+      @endif
+    @endfor
+  @endisset
 @endsection

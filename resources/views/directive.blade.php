@@ -9,6 +9,12 @@
 <body>
   @php
   $num = 6;
+
+  $datas = [
+    1 => 'Apple',
+    2 => 'Banana',
+    3 => 'Cherry',
+  ];
   @endphp
 
   @if ($num <= 4)
@@ -27,5 +33,18 @@
         @break
     @endswitch
   @endif
+  <p>1から{{ $num }}まで表示します。</p>
+  @for ($i=1; $i<=$num; $i++)
+    {{ $i }}
+  @endfor
+
+  @foreach ($datas as $data)
+    @if ($loop->last)
+      <p>{{ $data }}</p>
+      <p>ここまでです。</p>
+    @else
+      <p>{{ $data }}</p>
+    @endif
+  @endforeach
 </body>
 </html>

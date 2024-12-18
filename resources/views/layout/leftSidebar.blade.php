@@ -14,6 +14,9 @@
     @yield('sidebar')
   </div>
   <div>
+    @yield('ProfileCard')
+  </div>
+  <div>
     @yield('form')
   </div>
 </body>
