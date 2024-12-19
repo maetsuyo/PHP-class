@@ -13,9 +13,9 @@
   <div class="text-left">
     @yield('sidebar')
   </div>
-  <div>
+  {{-- <div>
     @yield('ProfileCard')
-  </div>
+  </div> --}}
   <div>
     @yield('form')
   </div>

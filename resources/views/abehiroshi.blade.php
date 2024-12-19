@@ -11,14 +11,23 @@
   <p><a href="kanri/kanri.htm" target="right">管理者</a></p>
 @endsection
 
-@section('ProfileCard')
-  <x-ProfileCard name="阿部寛">
-@endsection
+@php
+$user = [
+  'name' => 'test',
+];
+@endphp
+
+
+<x-profile-card :name="$user['name']" />
+
 
 @section('form')
 <form action="/abehiroshi" method="POST">
   @csrf
-  <p>path:<input type="text" name="path"></p>
+  path:<input type="text" name="path">
+  <button type="submit">
+    送信
+  </button>
 </form>
   @isset($path)
     @for ($i=1; $i<=5; $i++)

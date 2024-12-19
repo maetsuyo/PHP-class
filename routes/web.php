@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\ReqResController;
 use App\Http\Controllers\AbeHiroController;
+use App\Http\Controllers\ComponentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,3 +27,9 @@ Route::post('/abehiroshi', [AbeHiroController::class, 'abehiro']);
 Route::get('/directive', function () {
     return view('directive');
 });
+
+Route::get('/component', function () {
+    return view('component');
+});
+
+Route::post('/component', [ComponentController::class, 'postProfile']);
