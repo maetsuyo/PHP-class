@@ -22,6 +22,13 @@ class ComponentController extends Controller
       'gender' => $gender,
     ];
 
-    return view('component', ['user'=>$user]);
+    // $request->session()->put('user', $user);
+    // $value = session('user');
+
+    $_SESSION['user'] = $user;
+    $value = $_SESSION['user'];
+    // dd($value);
+
+    return view('component', ['user'=>$user, 'value'=>$value]);
   }
 }

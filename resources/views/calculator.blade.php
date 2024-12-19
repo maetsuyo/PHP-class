@@ -7,18 +7,9 @@
   <title>Document</title>
 </head>
 <body>
-  <x-form />
-
-  @isset($user)
-    <x-profile
-      :name="$user['name']"
-      :age="$user['age']"
-      :gender="$user['gender']"
-    />
+  <x-calc-form />
+  @isset($total)
+    <x-calc-result />
   @endisset
-
-  {{-- @isset($value)
-    <p>{{ $value }}</p>
-  @endisset --}}
 </body>
 </html>

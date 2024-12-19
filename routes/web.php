@@ -5,6 +5,7 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\ReqResController;
 use App\Http\Controllers\AbeHiroController;
 use App\Http\Controllers\ComponentController;
+use App\Http\Controllers\CalculatorController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -33,3 +34,9 @@ Route::get('/component', function () {
 });
 
 Route::post('/component', [ComponentController::class, 'postProfile']);
+
+Route::get('/calculator', function () {
+    return view('calculator');
+});
+
+Route::post('/calculator', [CalculatorController::class, 'calculate']);

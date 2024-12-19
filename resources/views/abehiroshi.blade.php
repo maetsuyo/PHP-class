@@ -17,9 +17,7 @@ $user = [
 ];
 @endphp
 
-
 <x-profile-card :name="$user['name']" />
-
 
 @section('form')
 <form action="/abehiroshi" method="POST">
