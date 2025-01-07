@@ -13,4 +13,7 @@
   <button type="submit" name="calculate" value="divided">
     ÷
   </button>
+  <button type="submit" name="calculate" value="reset">
+    リセット
+  </button>
 </form>

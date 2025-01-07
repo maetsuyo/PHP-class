@@ -29,6 +29,9 @@ class CalculatorController extends Controller
       case 'divided':
         $total /= $value;
         break;
+      case 'reset':
+        $total = 0;
+        break;
     }
 
     $request->session()->put('total', $total);
