@@ -12,6 +12,12 @@ class ComponentController extends Controller
 
 
   public function postProfile(Request $request) {
+    $validated = $request->validate([
+      'name' => 'required|string|max:255',
+      'age' => 'required|integer|min:1',
+      'gender' => 'required|in:male,female',
+  ]);
+  
     $name = $request->input('name');
     $age = $request->input('age');
     $gender = $request->input('gender');
