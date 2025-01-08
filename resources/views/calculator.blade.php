@@ -9,7 +9,7 @@
 <body>
   <x-calc-form />
   @isset($total)
-    <x-calc-result :total="$total" />
+    <x-calc-result :total="$total"/>
   @endisset
 </body>
 </html>

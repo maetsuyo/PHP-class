@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CalculatorController extends Controller
 {
@@ -14,7 +15,8 @@ class CalculatorController extends Controller
     $value = $request->input('value');
     $calculate = $request->input('calculate');
 
-    $total = $request->session()->get('total', 0);
+    $total = Session::get('total', 0);
+    // $total = $request->session()->get('total', 0);
 
     switch ($calculate) {
       case 'plus':
@@ -34,8 +36,10 @@ class CalculatorController extends Controller
         break;
     }
 
-    $request->session()->put('total', $total);
-    $total = $request->session()->get('total', 0);
+    Session::put('total', $total);
+    // $request->session()->put('total', $total);
+    $total = Session::get('total', 0);
+    // $total = $request->session()->get('total', 0);
     // dd($total);
     return view('calculator', ['total'=>$total]);
   }

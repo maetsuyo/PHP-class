@@ -8,12 +8,13 @@ use Illuminate\View\Component;
 
 class CalcResult extends Component
 {
+    public $total = 0;
     /**
      * Create a new component instance.
      */
-    public function __construct(public int $total=0)
+    public function __construct($total)
     {
-        //
+        $this->total = $total;
     }
 
     /**
