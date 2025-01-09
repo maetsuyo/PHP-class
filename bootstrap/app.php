@@ -3,7 +3,10 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
-use App\Http\Middleware\ComponentMiddleWare;
+use App\Http\Middleware\ComponentMiddleware;
+use App\Http\Middleware\SampleMid;
+use App\Http\Middleware\MidFormMiddleware;
+use App\Http\Middleware\FirewallMiddleware;
 
 return Application::configure(basePath: dirname(__DIR__))
   ->withRouting(
@@ -12,7 +15,6 @@ return Application::configure(basePath: dirname(__DIR__))
     health: '/up',
   )
   ->withMiddleware(function (Middleware $middleware) {
-    $middleware->append(ComponentMiddleWare::class);
   })
   ->withExceptions(function (Exceptions $exceptions) {
     //

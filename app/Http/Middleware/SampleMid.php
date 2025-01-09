@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class ComponentMiddleware
+class SampleMid
 {
   /**
    * Handle an incoming request.
@@ -15,10 +15,10 @@ class ComponentMiddleware
    */
   public function handle(Request $request, Closure $next): Response
   {
-    if ($request->input('age') >= 18) {
+    $word = 'SampleMid';
+    if ($word == 'SampleMid' && $request->path() !== 'abehiroshi') {
       return redirect('/abehiroshi');
     }
-
     return $next($request);
   }
 }

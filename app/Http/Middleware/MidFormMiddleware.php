@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class ComponentMiddleware
+class MidFormMiddleware
 {
   /**
    * Handle an incoming request.
@@ -18,7 +18,6 @@ class ComponentMiddleware
     if ($request->input('age') >= 18) {
       return redirect('/abehiroshi');
     }
-
     return $next($request);
-  }
+    }
 }

@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class ComponentMiddleware
+class FirewallMiddleware
 {
   /**
    * Handle an incoming request.
@@ -15,10 +15,15 @@ class ComponentMiddleware
    */
   public function handle(Request $request, Closure $next): Response
   {
-    if ($request->input('age') >= 18) {
-      return redirect('/abehiroshi');
-    }
+    $ip = [
+      ['ip' => '127.0.0.1']
+    ];
 
+    $detect = collect($ip)->contains('ip', $request->ip());
+
+    if (!$detect) {
+      return redirect('/reqres');
+    }
     return $next($request);
   }
 }
